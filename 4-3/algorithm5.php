@@ -19,10 +19,10 @@
 
 // 手札
 $cards = [
+    ['suit'=>'spade', 'number'=>8],
+    ['suit'=>'spade', 'number'=>7],
     ['suit'=>'diamond', 'number'=>6],
-    ['suit'=>'spade', 'number'=>5],
-    ['suit'=>'heart', 'number'=>5],
-    ['suit'=>'diamond', 'number'=>5],
+    ['suit'=>'diamond', 'number'=>4],
     ['suit'=>'joker', 'number'=>0],
 ];
 
@@ -47,8 +47,15 @@ function exchangeCards(&$cards,&$cnt_number)
         $suit_num[$val["suit"]]++;
         $cnt_number[] = $val["number"];
     }
-    asort($cnt_number);
+    // 配列を降順に並び替え
+    rsort($cnt_number);
 
+    echo "----before-----";
+    echo "1:".$cnt_number[0];
+    echo "2:".$cnt_number[1];
+    echo "3:".$cnt_number[2];
+    echo "4:".$cnt_number[3];
+    echo "5:".$cnt_number[4];
     // 絵柄が多い順に並び替え
     arsort($suit_num);
     $s = 0;
@@ -166,6 +173,16 @@ function judge($cards,$roleStrs,$cnt_number) {
                 $sameCnt = 1;
             }
         }
+        foreach($numArr as $n)
+        {
+            if($jokerFlg)
+            {
+                if($n === 2)
+                {
+                    $roleResult = 3;
+                }
+            }
+        }
         if(!$jokerFlg)
         {
             foreach($numArr as $num)
@@ -177,14 +194,17 @@ function judge($cards,$roleStrs,$cnt_number) {
             }
         }
     }
-    if($sameCnt == 1)
+    if(!$jokerFlg)
     {
-        $roleResult = 1;
-        $twoCard = 1;
-    }
-    if($sameCnt == 2)
-    {
-        $roleResult = 2;
+        if($sameCnt == 1)
+        {
+            $roleResult = 1;
+            $twoCard = 1;
+        }
+        if($sameCnt == 2)
+        {
+            $roleResult = 2;
+        }
     }
 
     foreach($numArr as $num)
@@ -196,14 +216,28 @@ function judge($cards,$roleStrs,$cnt_number) {
             break;
         }
     }
+
+
+
     $tmpNum = 0;
     $judgeCnt = 0;
     $strateFlg = false;
+    if($jokerFlg)
+    {
+        if($cnt_number[3] === 1)
+        {
+            $cnt_number[4] += 5;
+            rsort($cnt_number);
+        }
+        else{
+            $cnt_number[4] = $cnt_number[3] - 1;
+        }
+    }
     // ストレート(連番5枚)
-    if($cnt_number[0] === $cnt_number[1] - 1 &&
-        $cnt_number[1] === $cnt_number[2] - 1 &&
-        $cnt_number[2] === $cnt_number[3] - 1 &&
-        $cnt_number[3] === $cnt_number[4] - 1)
+    if($cnt_number[1] === $cnt_number[0] - 1 &&
+        $cnt_number[2] === $cnt_number[1] - 1 &&
+        $cnt_number[3] === $cnt_number[2] - 1 &&
+        $cnt_number[4] === $cnt_number[3] - 1)
     {
         $strateFlg = true;
     }

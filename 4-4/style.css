@@ -1,0 +1,62 @@
+
+.Header
+{
+    height:80px;
+    background-color:black;
+}
+#headerBox
+{
+    width:530px;
+    height:20px;
+    margin:0 auto;
+    padding-top:24px;
+    margin-bottom:24px;
+}
+#headerBox a
+{
+    color:#ffffff;
+    font-size:20px;
+}
+
+#backgroundBox
+{
+    position:relative;
+    width:auto;
+    height:auto;
+    background-color:burlywood;
+}
+#backgroundBox #itemBox
+{
+    position:absolute;
+    padding-left:5%;
+}
+#backgroundBox #itemBox #menuBox
+{
+    width:550px;
+    height:auto;
+    background-color:burlywood;
+}
+#backgroundBox #itemBox #logoImg
+{
+    position:absolute;
+    float:left;
+    margin-top:20px;
+}
+#backgroundBox #eyecatchImg
+{
+    position:absolute;
+    width:100%;
+}
+
+#backgroundBox #itemBox #menuBox ul
+{
+    display:flex;
+    list-style-type:none;
+}
+
+#backgroundBox #itemBox #menuBox ul li a
+{
+    color:#ffffff;
+    padding-right:100px;
+    text-decoration: none;
+}

@@ -104,3 +104,30 @@ body
     line-height: 64px;
     font-weight: bold;
 }
+#photoItems
+{
+    display:flex;
+    margin-top:100px;
+}
+#tokyo
+{
+    display:flex;
+}
+
+#tokyo span
+{
+    display: inline-block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius:10px;
+    width: 100px;
+    height: 100px;
+}
+#photoItems strong
+{
+    line-height:2.0;
+    margin-left:15px;
+    margin-top:20px;
+    padding-right:150px;
+}

@@ -1,62 +1,106 @@
+@charset "UTF-8";
+* 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body
+{
+    margin:0 auto;
+}
+.coronaInfo
+{
+    height:50px;
+    background-color:#000000;
+    text-align:center;
+    padding-top:10px;
+}
+.coronaInfo a
+{
+    font-size:20px;
+    color:#ffffff;
+}
 
 .Header
 {
-    height:80px;
-    background-color:black;
-}
-#headerBox
-{
-    width:530px;
-    height:20px;
-    margin:0 auto;
-    padding-top:24px;
-    margin-bottom:24px;
-}
-#headerBox a
-{
-    color:#ffffff;
-    font-size:20px;
+    min-height:780px;
+    width:100%;
+    background-position:center;
+    background-size:cover;
 }
 
-#backgroundBox
+.Header #filter
 {
-    position:relative;
-    width:auto;
-    height:auto;
-    background-color:burlywood;
+    height:780px;
+    width:100%;
+    position:absolute;
+    background-color:#ffffff;
+
+    opacity:0.25;
 }
-#backgroundBox #itemBox
+
+.Header #head
+{
+    height:50px;
+    display:flex;
+}
+
+.Header nav
 {
     position:absolute;
-    padding-left:5%;
+    width:530px;
+    height:50px;
+    display:flex;
+    right:0;
+    left:0;
+    margin:0 auto;
+    padding-top:10px;
 }
-#backgroundBox #itemBox #menuBox
+.Header #logo
 {
-    width:550px;
-    height:auto;
-    background-color:burlywood;
+    margin-left:3%;
+    margin-top:10px;
 }
-#backgroundBox #itemBox #logoImg
+.Header nav #button
+{
+    margin-left:0px;
+}
+.Header nav #button a
+{
+    font-size:20px;
+    line-height:2.34;
+    color:#ffffff;
+    padding-left:80px;
+    text-decoration: none;
+}
+.Header #signin
 {
     position:absolute;
-    float:left;
+    width:120px;
+    right:60px;
     margin-top:20px;
 }
-#backgroundBox #eyecatchImg
+.Header #signin a
 {
-    position:absolute;
-    width:100%;
-}
-
-#backgroundBox #itemBox #menuBox ul
-{
-    display:flex;
-    list-style-type:none;
-}
-
-#backgroundBox #itemBox #menuBox ul li a
-{
+    font-size:22px;
+    line-height:2.34;
     color:#ffffff;
-    padding-right:100px;
+
     text-decoration: none;
+}
+
+.Header h1
+{
+    width: 90%;
+    margin-top:200px;
+    position: absolute;
+    top: 250px;
+    left: 5%;
+    color: #ffffff;
+    font-size: 64px;
+    line-height: 64px;
+    font-weight: bold;
 }

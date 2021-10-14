@@ -1,0 +1,445 @@
+@charset "UTF-8";
+/* reset */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+address,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+img,
+form,
+table,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  text-align: left;
+  list-style-type: none;
+  border-collapse: collapse;
+}
+
+textarea {
+  font-size: 100%;
+  vertical-align: middle;
+}
+img {
+  border-style: none;
+  display: block;
+}
+hr {
+  display: none;
+}
+em {
+  font-style: normal;
+}
+input {
+  line-height: auto;
+  vertical-align: middle;
+}
+strong.more {
+  color: #c30;
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",
+    Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  min-height: 100%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+header {
+  min-height: 680px;
+  background-size: cover;
+  background-position: center;
+}
+
+header h1 {
+  width: 90%;
+  margin: auto;
+  position: absolute;
+  top: 250px;
+  left: 5%;
+  color: white;
+  font-size: 64px;
+  line-height: 64px;
+  font-weight: bold;
+}
+
+#top nav {
+  display: flex;
+  color: white;
+  width: 100%;
+  margin: auto;
+  padding: 15px 5%;
+  justify-content: space-between;
+}
+
+.black_out {
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  transition: 1s;
+}
+
+#navi {
+  display: flex;
+  justify-content: center;
+  line-height: 50px;
+  flex: 50%;
+}
+
+#signin {
+  display: flex;
+  justify-content: flex-end;
+  line-height: 50px;
+  flex: 25%;
+}
+
+div#logo {
+  padding-top: 10px;
+  flex: 25%;
+}
+
+footer {
+  border-top: 1px solid #ddd;
+  background-color: #f7f7f7;
+  padding: 4% 0;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+#up {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 100%;
+}
+
+.navbutton {
+  margin: 0 20px;
+}
+
+#down {
+  margin: 0 auto;
+  width: 90%;
+}
+
+#down h1 {
+  padding: 20px 0 5px 0;
+}
+
+#top h1 {
+  color: white;
+}
+
+.footer_column {
+  width: 25%;
+  color: #333;
+}
+
+.footer_column p {
+  margin-top: 10px;
+}
+
+#copyright {
+  padding-top: 2%;
+  color: #333;
+  border-top: 1px solid #ccc;
+}
+
+#loc {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 40px 0;
+  padding: 0 5%;
+}
+
+.areas {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 0;
+}
+
+.areas p {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.photo {
+  width: 64px;
+  height: 64px;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.access {
+  padding: 5px 15px;
+}
+
+#pickloc {
+  width: 90%;
+  margin: auto;
+}
+
+section h1 {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+#locs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.locations {
+  width: 24%;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.locations img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+#goto {
+  width: 90%;
+  height: auto;
+  margin: 40px auto;
+  opacity: 0.9;
+  position: relative;
+}
+
+#coffee {
+  background-image: url("cafe/img/goto.jpg");
+  height: auto;
+  min-height: 383px;
+  border-radius: 16px;
+}
+
+.goto_text {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+}
+
+.goto_text h3 {
+  font-size: 42px;
+  font-weight: bold;
+  color: black;
+}
+
+.goto_text p {
+  font-size: 18px;
+  font-weight: 100;
+  color: black;
+}
+
+#experience {
+  background-color: black;
+  color: white;
+  padding: 40px 5% 100px 5%;
+}
+
+#experience_container {
+  margin: 15px auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 15px;
+}
+
+.experience_items img,
+.host_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+#experience h3 {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+#experience h2,
+.text {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.host {
+  margin: 40px 5%;
+}
+
+.host_container {
+  margin: 15px auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 15px;
+}
+
+.jump {
+  position: fixed;
+  line-height: 3rem;
+  color: white;
+  text-align: center;
+  height: 3rem;
+  line-height: 3rem;
+  background-color: black;
+  padding: 0 10px;
+  cursor: pointer;
+  right: 0;
+  bottom: 0;
+  transition: all 1s ease;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.contact_box {
+  width: 70%;
+  margin: 5% auto;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+}
+.contact_box form {
+  margin: 3%;
+}
+.contact_box p {
+  font-weight: normal;
+}
+.contact_box .required {
+  color: red;
+}
+.contact_box h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc;
+}
+.contact_box h3 {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#f5f5f5),
+    to(#eaeaea)
+  );
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+  padding: 1%;
+  margin: 1% 0;
+}
+.contact_box dl {
+  margin: 2% 0;
+}
+.contact_box dd {
+  padding: 0.5% 0 1%;
+  font-size: 1.2rem;
+}
+.contact_box dd.error {
+  padding: 0;
+  color: red;
+  font-size: 1rem;
+}
+.contact_box input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 10px 2.5px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+}
+.contact_box textarea {
+  resize: none;
+  width: 100%;
+  height: 33vh;
+  font-size: 1.2rem;
+  padding: 10px 2.5px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+}
+.contact_box button {
+  color: white;
+  background-color: rgb(215, 4, 102);
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 10px 2.5px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.contact_box .confirm dt {
+  margin-top: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+.contact_box .confirm dd {
+  padding: 1%;
+}
+.contact_box .confirm dd.confirm_btn {
+  padding: 1% 0;
+  display: flex;
+  justify-content: space-between;
+}
+.contact_box .confirm dd.confirm_btn button {
+  margin-right: 10px;
+}
+.contact_box .confirm dd.confirm_btn a {
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+  margin-left: 10px;
+  background-color: transparent;
+  border: 2px solid #066;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #066;
+}
+.complete_msg {
+  padding: 3%;
+}
+.complete_msg a {
+  display: block;
+  margin-top: 10px;
+  text-decoration: underline;
+}

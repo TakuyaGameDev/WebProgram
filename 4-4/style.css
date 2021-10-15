@@ -104,30 +104,237 @@ body
     line-height: 64px;
     font-weight: bold;
 }
-#photoItems
+
+.locationPhotos
 {
     display:flex;
-    margin-top:100px;
+    flex-wrap: wrap;
+    margin-top:30px;
+    margin-right:3%;
+    margin-left:-1%;
+
+    margin-bottom:100px;
 }
-#tokyo
+
+.locationPhotos #box
 {
+    width:250px;
+    display:flex;
+    height:100px;
+    margin-left:10%;
+    margin-bottom:30px;
+}
+.locationPhotos #strArea
+{
+    width:80px;
+    height:50px;
+    padding-top:20px;
+}
+
+.locationPhotos #box #photo img
+{
+    width:100px;
+    height:100px;
+    object-fit: cover;
+    border-radius:8px;
+    margin-right:15px;
+}
+.favLocation
+{
+    width:auto;
+}
+
+.favLocation h1
+{
+    margin-left:8.6%;
+    font-size:40px;
+}
+
+#favLocPhotos
+{
+    display:flex;
+    margin-left:8.6%;
+    margin-bottom:100px;
+}
+
+#favLocPhotos #area
+{
+    margin-right:10px;
+}
+
+#favLocPhotos #area img
+{
+    width:100%;
+    height:80%;
+    border-radius:8px;
+}
+
+#favLocPhotos #area #strArea strong
+{
+    font-size:24px;
+}
+
+.GoToEats
+{
+    width:90%;
+    height:426px;
+    margin-left:8.6%;
+    background-image: url("cafe/img/goto.jpg");
+    border-radius:20px;
+    padding-top:80px;
+    padding-left:50px;
+    margin-bottom:50px;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.GoToEats #strBox
+{
+    margin-top:-230px;
+}
+.GoToEats #strBox h1
+{
+    font-size:56px;
+}
+.GoToEats #strBox p
+{
+    font-size:25px;
+    margin-top:-30px;
+}
+
+.GoToEats #filter
+{
+    width:720px;
+    height:200px;
+    margin-top:30px;
+    background-color:#ffffff;
+    opacity:0.4;
+}
+
+.Experience
+{
+    width:100%;
+    height:100%;
+
+    background-color:#000000;
+
+    padding-top:30px;
+    padding-bottom:50px;
+}
+
+.Experience #title
+{
+    font-size:42px;
+    margin-left:8.6%;
+    color:#ffffff;
+}
+.Experience strong
+{
+    display:block;
+    margin-top:-30px;
+    margin-left:8.6%;
+    font-size:18px;
+    color:#ffffff;
+}
+.Experience #photoArea
+{
+    margin-top:20px;
+    margin-left:8.6%;
     display:flex;
 }
 
-#tokyo span
+.Experience #photoArea img
 {
-    display: inline-block;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius:10px;
-    width: 100px;
-    height: 100px;
+    width:100%;
+    margin-right:2%;
+    border-radius:8px;
 }
-#photoItems strong
+
+.Experience #photoArea #area
 {
-    line-height:2.0;
-    margin-left:15px;
-    margin-top:20px;
-    padding-right:150px;
+    width:30%;
+    height:30%;
+
+    margin-right:30px;
+}
+.Experience #photoArea h1
+{
+    color:#ffffff;
+    margin-top:-5px;
+}
+.Experience #photoArea p
+{
+    color:#ffffff;
+    margin-top:-20px;
+}
+
+.joinHost
+{
+    margin-left:8.6%;
+}
+.joinHost #title
+{
+    font-size:42px;
+}
+
+.joinHost #photoArea
+{
+    margin-top:-30px;
+    display:flex;
+}
+
+.joinHost #photoArea #area
+{
+    width:30%;
+    height:30%;
+
+    margin-right:30px;
+}
+
+.joinHost #photoArea img
+{
+    width:100%;
+    margin-right:2%;
+    border-radius:8px;
+}
+
+.joinHost #photoArea h1
+{
+    margin-top:-2px;
+}
+
+.footerBox
+{
+    width:100%;
+    height:auto;
+    background-color:#f0f0f0;
+    border-top:solid #c0c0c0 2px;
+
+    padding-top:100px;
+}
+
+.footerBox #parent
+{
+    width:auto;
+    height:auto;
+    margin-left:8.6%;
+    margin-right:30px;
+    display:flex;
+    flex-wrap:wrap;
+    border-bottom:solid #c0c0c0 2px;
+}
+
+.footerBox #parent strong
+{
+    font-size:18px;
+}
+
+.footerBox #parent p
+{
+    font-size:18px;
+}
+
+.footerBox #parent #area
+{
+    width:380px;
+    margin-right:6%;
 }

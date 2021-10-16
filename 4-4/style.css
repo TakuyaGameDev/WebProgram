@@ -45,12 +45,14 @@ body
 .Header #head
 {
     height:50px;
+    background-color:black;
     display:flex;
+    position:fixed;
 }
 
 .Header nav
 {
-    position:absolute;
+    position:fixed;
     width:530px;
     height:50px;
     display:flex;
@@ -61,14 +63,15 @@ body
 }
 .Header #logo
 {
+    position:fixed;
     margin-left:3%;
     margin-top:10px;
 }
-.Header nav #button
+.Header nav #button1 #button2 #button3
 {
     margin-left:0px;
 }
-.Header nav #button a
+.Header nav a
 {
     font-size:20px;
     line-height:2.34;
@@ -78,7 +81,7 @@ body
 }
 .Header #signin
 {
-    position:absolute;
+    position:fixed;
     width:120px;
     right:60px;
     margin-top:20px;
@@ -103,6 +106,14 @@ body
     font-size: 64px;
     line-height: 64px;
     font-weight: bold;
+}
+
+#signinBox
+{
+    display:none;
+    width:400px;
+    height:400px;
+    background-color:#ffffff;
 }
 
 .locationPhotos
@@ -139,12 +150,12 @@ body
     border-radius:8px;
     margin-right:15px;
 }
-.favLocation
+#favLocation
 {
     width:auto;
 }
 
-.favLocation h1
+#favLocation h1
 {
     margin-left:8.6%;
     font-size:40px;
@@ -210,7 +221,7 @@ body
     opacity:0.4;
 }
 
-.Experience
+#Experience
 {
     width:100%;
     height:100%;
@@ -221,13 +232,13 @@ body
     padding-bottom:50px;
 }
 
-.Experience #title
+#Experience #title
 {
     font-size:42px;
     margin-left:8.6%;
     color:#ffffff;
 }
-.Experience strong
+#Experience strong
 {
     display:block;
     margin-top:-30px;
@@ -235,33 +246,33 @@ body
     font-size:18px;
     color:#ffffff;
 }
-.Experience #photoArea
+#Experience #photoArea
 {
     margin-top:20px;
     margin-left:8.6%;
     display:flex;
 }
 
-.Experience #photoArea img
+#Experience #photoArea img
 {
     width:100%;
     margin-right:2%;
     border-radius:8px;
 }
 
-.Experience #photoArea #area
+#Experience #photoArea #area
 {
     width:30%;
     height:30%;
 
     margin-right:30px;
 }
-.Experience #photoArea h1
+#Experience #photoArea h1
 {
     color:#ffffff;
     margin-top:-5px;
 }
-.Experience #photoArea p
+#Experience #photoArea p
 {
     color:#ffffff;
     margin-top:-20px;
@@ -317,10 +328,12 @@ body
     width:auto;
     height:auto;
     margin-left:8.6%;
-    margin-right:30px;
+    margin-right:8.6%;
     display:flex;
     flex-wrap:wrap;
     border-bottom:solid #c0c0c0 2px;
+
+    margin-bottom:50px;
 }
 
 .footerBox #parent strong
@@ -333,8 +346,27 @@ body
     font-size:18px;
 }
 
+.footerBox #parent p a
+{
+    text-decoration: none;
+    color:#000000;
+}
+
 .footerBox #parent #area
 {
-    width:380px;
-    margin-right:6%;
+    width:250px;
+    margin-right:8%;
+}
+
+.siteInfo
+{
+    margin-top:-10px;
+    line-height:1.0;
+    margin-left:8.6%;
+    margin-bottom:100px;
+}
+
+.siteInfo p
+{
+    font-size:18px;
 }

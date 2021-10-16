@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>Sample Site</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="process.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -13,16 +15,16 @@
     <div id = "filter"></div>
     <div id = "head">
         <div id = "logo">
-            <img src = "cafe/img/logo.png"width="247px" height="46.8px">
+            <a href=""><img src = "cafe/img/logo.png"width="247px" height="46.8px"></a>
         </div>    
         <nav>
-            <div id = "button">
-                <a href="">はじめに</a>
+            <div id = "button1">
+                <a href="#favLocation">はじめに</a>
             </div>
-            <div id = "button">
-                <a href="">体験</a>
+            <div id = "button2">
+                <a href="#Experience">体験</a>
             </div>
-            <div id = "button">
+            <div id = "button3">
                 <a href="">お問い合わせ</a>
             </div>
         </nav>

@@ -1,6 +1,9 @@
 <?php include 'header.php';?>
 
 <body>
+    <div id = "signinBox">
+        
+    </div>
     <div class = "locationPhotos">
         <div id = "box">
             <div id = "photo">
@@ -59,7 +62,7 @@
             </div>
         </div>
     </div>
-    <div class = "favLocation">
+    <div id = "favLocation">
         <h1>好きなロケーションを選ぼう</h1>
         <div id = "favLocPhotos">
             <div id = "area">
@@ -96,7 +99,7 @@
             </div>
         </div>
     </div>
-    <section class = "Experience">
+    <section id = "Experience">
         <h1 id = "title">カフェづくりを体験しよう</h1>
         <strong>お店のエキスパートが案内するユニークな体験（直接対面型またはオンライン）。</strong>
         <div id = "photoArea">

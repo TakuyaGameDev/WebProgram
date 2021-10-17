@@ -13,25 +13,25 @@
     </section>
     <header class="Header" style="background-image: url(cafe/img/eyecatch.jpg)">
     <div id = "filter"></div>
-    <div id = "head">
-        <div id = "logo">
-            <a href=""><img src = "cafe/img/logo.png"width="247px" height="46.8px"></a>
-        </div>    
-        <nav>
-            <div id = "button1">
-                <a href="#favLocation">はじめに</a>
+        <div id = "head">
+            <div id = "logo">
+                <a href=""><img src = "cafe/img/logo.png"width="247px" height="46.8px"></a>
             </div>
-            <div id = "button2">
-                <a href="#Experience">体験</a>
+            <nav>
+                <div id = "button1">
+                    <a href="#favLocation">はじめに</a>
+                </div>
+                <div id = "button2">
+                    <a href="#Experience">体験</a>
+                </div>
+                <div id = "button3">
+                    <a href="contact.php">お問い合わせ</a>
+                </div>
+            </nav>
+            <div id = "signin">
+                <a href="">サインイン</a>
             </div>
-            <div id = "button3">
-                <a href="">お問い合わせ</a>
-            </div>
-        </nav>
-        <div id = "signin">
-            <a href="">サインイン</a>
         </div>
-    </div>
     <h1>あなたの<br>好きな空間を作る。</h1>
     </header>
 </body>

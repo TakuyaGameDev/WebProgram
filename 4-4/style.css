@@ -11,6 +11,14 @@ body
 {
     margin:0 auto;
 }
+input,textarea
+{
+    font-size:25px;
+}
+textarea
+{
+    padding-top:16px;
+}
 .coronaInfo
 {
     height:50px;
@@ -36,9 +44,8 @@ body
 {
     height:780px;
     width:100%;
-    position:absolute;
     background-color:#ffffff;
-
+    position:absolute;
     opacity:0.25;
 }
 
@@ -50,7 +57,7 @@ body
     position:fixed;
 }
 
-.Header nav
+nav
 {
     position:fixed;
     width:530px;
@@ -61,17 +68,17 @@ body
     margin:0 auto;
     padding-top:10px;
 }
-.Header #logo
+#logo
 {
     position:fixed;
     margin-left:3%;
     margin-top:10px;
 }
-.Header nav #button1 #button2 #button3
+nav #button1 #button2 #button3
 {
     margin-left:0px;
 }
-.Header nav a
+nav a
 {
     font-size:20px;
     line-height:2.34;
@@ -79,14 +86,14 @@ body
     padding-left:80px;
     text-decoration: none;
 }
-.Header #signin
+#signin
 {
     position:fixed;
     width:120px;
     right:60px;
     margin-top:20px;
 }
-.Header #signin a
+#signin a
 {
     font-size:22px;
     line-height:2.34;
@@ -106,14 +113,6 @@ body
     font-size: 64px;
     line-height: 64px;
     font-weight: bold;
-}
-
-#signinBox
-{
-    display:none;
-    width:400px;
-    height:400px;
-    background-color:#ffffff;
 }
 
 .locationPhotos
@@ -369,4 +368,162 @@ body
 .siteInfo p
 {
     font-size:18px;
+}
+
+#contactBox
+{
+    width:80%;
+    height:auto;
+    border:solid 2px #d0d0d0;
+    border-radius:20px;
+    margin:0 auto;
+    margin-top:200px;
+    margin-bottom:80px;
+}
+
+#contactBox #contactHeader h1
+{
+    text-align:center;
+
+    padding-bottom:20px;
+    border-bottom:solid 2px #d0d0d0;
+}
+#contactBox #contactBody
+{
+    margin-left:2%;
+    margin-right:2%;
+    margin-top:2%;
+}
+#contactBox #strBox
+{
+    width:100%;
+    height:auto;
+
+    border-top:solid 2px #000000;
+    border-bottom:solid 2px #000000;
+    background-color:#f2f2f2;
+
+    margin-top:20px;
+}
+
+#contactBox #strBox p
+{
+    margin-top:10px;
+    margin-bottom:10px;
+    font-size: 22px;
+}
+#contactBox #contactBody #sub p
+{
+    font-size:20px;
+}
+#contactBox #contactBody #sub #essential span
+{
+    color:#ff0000;
+}
+#contactBox #contactBody #sub #essential
+{
+    margin-top:-20px;
+}
+#contactBox #contactBody #inputForm span
+{
+    color:#ff0000;
+}
+#contactBox #contactBody #inputForm p
+{
+    font-size:20px;
+}
+#contactBox #contactBody #inputBox
+{
+    width:80%;
+    height:60px;
+    margin-top:-14px;
+    border:solid 2px #d0d0d0;
+    border-radius:15px;
+}
+
+#contactBox #contactBody #inputOpinionForm span
+{
+    color:#ff0000;
+}
+
+#contactBox #contactBody #inputOpinionForm #opinionBox
+{
+    width:100%;
+    height:300px;
+    margin-top:30px;
+    border:solid 2px #d0d0d0;
+    border-radius:15px;
+}
+
+#contactBox #contactBody #submitBtn input
+{
+    width:100%;
+    height:auto;
+    padding-top:2%;
+    padding-bottom:2%;
+    margin-top:20px;
+    background-color:#ff00a0;
+
+    border-radius:10px;
+    margin-bottom:50px;
+}
+
+#confirmHeader
+{
+    width:80%;
+    height:auto;
+    border:solid 2px #d0d0d0;
+    border-radius:20px;
+    margin:0 auto;
+    margin-top:200px;
+    margin-bottom:80px;
+}
+
+#confirmHeader h1
+{
+    text-align: center;
+}
+
+#confirmHeader #box
+{
+    width:80%;
+    height:auto;
+    border:solid 2px #d0d0d0;
+    border-radius:20px;
+    margin:0 auto;
+    margin-top:20px;
+    margin-bottom:10px;
+    padding-top:10px;
+    padding-left:10px;
+}
+
+#confirmHeader #box #first
+{
+    font-size:30px;
+}
+#confirmHeader #box p
+{
+    font-size:30px;
+    margin-left:50px;
+}
+
+#confirmHeader #submitBtn
+{
+    width:40%;
+    height:auto;
+
+    background-color:#ff00a0;
+}
+#confirmHeader #backBtn
+{
+    width:40%;
+    height:auto;
+}
+
+#confirmHeader #btns
+{
+    width:100%;
+    margin-left:10%;
+    margin-right:10%;
+    padding-bottom:3%;
 }

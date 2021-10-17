@@ -1,9 +1,6 @@
 <?php include 'header.php';?>
 
 <body>
-    <div id = "signinBox">
-        
-    </div>
     <div class = "locationPhotos">
         <div id = "box">
             <div id = "photo">

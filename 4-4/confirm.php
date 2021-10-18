@@ -1,5 +1,7 @@
-
 <?php
+session_start();
+$post = $_SESSION['form'];
+
 if(!empty($_POST['back']))
 {
     if($_POST['back']){
@@ -29,19 +31,19 @@ if(!empty($_POST['send']))
             <div id = "confirmHeader">
                 <h1>送信内容はこれでよろしいですか？</h1>
                 <div id = "box">
-                    <span id = "first">氏名 : </span><p><?php echo $_GET['name'] ?></p>
+                    <span id = "first">氏名 : </span><p><?php echo htmlspecialchars($post['name']); ?></p>
                 </div>
                 <div id = "box">
-                    <span id = "first">フリガナ : </span><p><?php echo $_GET['furi'] ?></p>
+                    <span id = "first">フリガナ : </span><p><?php echo htmlspecialchars($post['furi']) ?></p>
                 </div>
                 <div id = "box">
-                    <span id = "first">電話番号 : </span><p><?php echo $_GET['telNum']?></p>
+                    <span id = "first">電話番号 : </span><p><?php echo htmlspecialchars($post['telNum'])?></p>
                 </div>
                 <div id = "box">
-                    <span id = "first">メールアドレス : </span><p><?php echo $_GET['email']?></p>
+                    <span id = "first">メールアドレス : </span><p><?php echo htmlspecialchars($post['mailAddress'])?></p>
                 </div>
                 <div id = "box">
-                    <span id = "first">お問い合わせ内容 : </span><p><?php echo $_GET['opinion']?></p>
+                    <span id = "first">お問い合わせ内容 : </span><p><?php echo nl2br(htmlspecialchars($post['opinion']))?></p>
                 </div>
                 <div id = "btns">
                     <input id = "submitBtn" type="submit" name = "send" value="送　信" style="color:#ffffff">

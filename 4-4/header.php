@@ -33,6 +33,47 @@
             </div>
         </div>
     <h1>あなたの<br>好きな空間を作る。</h1>
+    <div id="overlay"></div>
+    <div id = "modal">
+        <div id = "strBox">
+            <strong>ログイン</strong>
+        </div>
+        <div id = "inputBox">
+            <div id = "emailInput"> 
+                <input type = 'text' name="email" placeholder="メールアドレス">
+            </div>
+            <div id = "passInput">
+                <input type = 'text' name="password" placeholder="パスワード">
+            </div>
+            <div id = "sendBtn">
+                <input type = 'submit'name = "loginBtn" value="送　信" style="color:#ffffff">
+            </div>
+        </div>
+        <div id = "snsBtn">
+            <a id = "accessBtn" href = "home.php">
+                <div id = "btn">
+                    <img src = "cafe/img/twitter.png" width="45px" height="45px">
+                </div>
+            </a>
+            <a id = "accessBtn" href = "home.php">
+                <div id = "btn">
+                    <img src = "cafe/img/fb.png" width="45px" height="45px">
+                </div>
+            </a>
+            <a id = "accessBtn" href = "home.php">
+                <div id = "btn">
+                    <img src = "cafe/img/google.png" width="45px" height="45px">
+                </div>
+            </a>
+            <a id = "accessBtn" href = "home.php">
+                <div id = "btn">
+                    <img src = "cafe/img/apple.png" width="45px" height="45px">
+                </div>
+            </a>
+        </div>
+    </div>
+    
+    
     </header>
 </body>
 </html>

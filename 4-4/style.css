@@ -445,6 +445,10 @@ nav a
 {
     color:#ff0000;
 }
+#error
+{
+    color:#ff0000;
+}
 
 #contactBox #contactBody #inputOpinionForm #opinionBox
 {
@@ -453,6 +457,91 @@ nav a
     margin-top:30px;
     border:solid 2px #d0d0d0;
     border-radius:15px;
+}
+
+#modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 750px;
+    background-color: #ffffff;
+    display:none;
+    border-radius:40px;
+    padding-top:20px;
+}
+#modal #strBox
+{
+    width:auto;
+    height:auto;
+    padding:0 300px;
+    padding-bottom:20px;
+    border-bottom:solid #d0d0d0 2px;
+}
+#modal #strBox strong
+{
+    font-size: 25px;
+}
+#modal #inputBox
+{
+    padding:0 50px;
+    padding-top:30px;
+    padding-bottom:30px;
+    border-bottom:solid #d0d0d0 2px;
+}
+#modal #inputBox #passInput input
+{
+    width:600px;
+    height:50px;
+    border-radius:10px;
+    margin-top:10px;
+}
+#modal #inputBox #emailInput input
+{
+    width:600px;
+    height:50px;
+
+    border-radius:10px;
+}
+#modal #inputBox #sendBtn input
+{
+    width:600px;
+    height:70px;
+
+    border-radius:10px;
+    background-color:#ff00a0;
+
+    margin-top:30px;
+}
+#modal #snsBtn
+{
+    border-radius:10px;
+    margin-top:10px;
+    padding:0 50px;
+}
+#modal #snsBtn #btn
+{
+    width:600px;
+    height:70px;
+    border:solid #d0d0d0 2px;
+    border-radius:10px;
+    margin-top:10px;
+    text-align: center;
+    padding-top:12.5px;
+    margin-top:20px;
+    margin-bottom:30px;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 0;
+    display:none;
 }
 
 #contactBox #contactBody #submitBtn input
@@ -526,4 +615,43 @@ nav a
     margin-left:10%;
     margin-right:10%;
     padding-bottom:3%;
+}
+
+#compBox
+{
+    width:80%;
+    height:auto;
+
+    margin:0 auto;
+
+    border:solid #d0d0d0 2px;
+    border-radius:15px;
+    margin-top:200px;
+
+    margin-bottom:100px;
+}
+#compBox #strBox
+{
+    padding-bottom:0px;
+    border-bottom:solid #d0d0d0 2px;
+}
+#compBox #strBox h1
+{
+    text-align: center;
+}
+
+#compBox #detail
+{
+    padding-top:2%;
+    padding-left:2%;
+}
+#compBox #detail p
+{
+    font-size:20px;
+}
+
+#compBox a
+{
+    font-size:20px;
+    margin-left:2%;
 }

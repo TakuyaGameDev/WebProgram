@@ -1,6 +1,19 @@
-<?php include 'header.php';?>
+<?php 
+    session_start();
+    unset($_SESSION['form']);
+?>
 
 <body>
+    <section class = "coronaInfo">
+        <a href="">新型コロナウイルスに対する取り組みの最新情報をご案内</a>
+    </section>
+    
+    <header class="Header">
+        <div id = "filter"></div>
+        <h1>あなたの<br>好きな空間を作る。</h1>
+        <?php include 'header.php';?>
+    </header>
+    
     <div class = "locationPhotos">
         <div id = "box">
             <div id = "photo">

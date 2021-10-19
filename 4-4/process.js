@@ -1,5 +1,31 @@
 
 $(function(){
+  var url = window.location;
+  var path = url.href.split('/');
+  var file_name = path.pop();
+  if(file_name != "home.php")
+  {
+    $('#head').addClass('fixed');
+  }
+  $(window).scroll(function(){
+
+    if(file_name == "home.php")
+    {
+      var scrollAmount = $(this).scrollTop();
+      if(scrollAmount <= 0)
+      {
+        $('#jumpTopBtn').fadeOut();
+        $('#head').removeClass('fixed');
+      }
+      else
+      {
+        $('#jumpTopBtn').fadeIn();
+        
+        $('#head').addClass('fixed');
+      }
+    }
+  });
+
     $('a[href^="#"]').click(function(){
       var speed = 1000;
       var href= $(this).attr("href");
@@ -10,8 +36,8 @@ $(function(){
     });
 
     $('#signin').on('click',function(){
-        $('#modal').fadeIn();
-        $('#overlay').fadeIn();
+      $('#modal').fadeIn();
+      $('#overlay').fadeIn();
         return false;
       });
       $('#overlay').on('click', function () {
@@ -32,17 +58,20 @@ $(function(){
       var regexAddress = /.+@.+\..+/
       // バリデーション
       
-      if((inputInfo[0].length <= 0) || (inputInfo[0].length > 10))
+      if((inputInfo[0].length <= 0) || (inputInfo[0].length >= 10))
       {
         errMsg.push("氏名は必須入力です。10文字以内でご入力ください。\r\n");
       }
-      if((inputInfo[1].length <= 0) || (inputInfo[1].length > 10))
+      if((inputInfo[1].length <= 0) || (inputInfo[1].length >= 10))
       {
         errMsg.push("フリガナは必須入力です。10文字以内でご入力ください。\r\n");
       }
-      if(!regexNum.test(inputInfo[2]))
+      if(inputInfo[2].length > 0)
       {
-        errMsg.push("電話番号は0-9の数字のみでご入力ください。\r\n");
+        if(!regexNum.test(inputInfo[2]))
+        {
+          errMsg.push("電話番号は0-9の数字のみでご入力ください。\r\n");
+        }
       }
       if(!regexAddress.test(inputInfo[3]))
       {
@@ -61,4 +90,6 @@ $(function(){
         alert(outputErrorMsg);
       }
     });
+
+
   });

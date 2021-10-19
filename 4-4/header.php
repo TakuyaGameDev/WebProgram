@@ -8,31 +8,25 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <section class = "coronaInfo">
-        <a href="">新型コロナウイルスに対する取り組みの最新情報をご案内</a>
-    </section>
-    <header class="Header" style="background-image: url(cafe/img/eyecatch.jpg)">
-    <div id = "filter"></div>
-        <div id = "head">
-            <div id = "logo">
-                <a href=""><img src = "cafe/img/logo.png"width="247px" height="46.8px"></a>
-            </div>
-            <nav>
-                <div id = "button1">
-                    <a href="#favLocation">はじめに</a>
-                </div>
-                <div id = "button2">
-                    <a href="#Experience">体験</a>
-                </div>
-                <div id = "button3">
-                    <a href="contact.php">お問い合わせ</a>
-                </div>
-            </nav>
-            <div id = "signin">
-                <a href="">サインイン</a>
-            </div>
+    <div id = "head">
+        <div id = "logo">
+            <a href=""><img src = "cafe/img/logo.png"width="247px" height="46.8px"></a>
         </div>
-    <h1>あなたの<br>好きな空間を作る。</h1>
+        <nav>
+            <div id = "button1">
+                <a href="#favLocation">はじめに</a>
+            </div>
+            <div id = "button2">
+                <a href="#Experience">体験</a>
+            </div>
+            <div id = "button3">
+                <a href="contact.php">お問い合わせ</a>
+            </div>
+        </nav>
+        <div id = "signin">
+            <a href="">サインイン</a>
+        </div>
+    </div>
     <div id="overlay"></div>
     <div id = "modal">
         <div id = "strBox">
@@ -52,28 +46,29 @@
         <div id = "snsBtn">
             <a id = "accessBtn" href = "home.php">
                 <div id = "btn">
-                    <img src = "cafe/img/twitter.png" width="45px" height="45px">
+                    <img src = "cafe/img/twitter.png" width="35px" height="35px">
                 </div>
             </a>
             <a id = "accessBtn" href = "home.php">
                 <div id = "btn">
-                    <img src = "cafe/img/fb.png" width="45px" height="45px">
+                    <img src = "cafe/img/fb.png" width="35px" height="35px">
                 </div>
             </a>
             <a id = "accessBtn" href = "home.php">
                 <div id = "btn">
-                    <img src = "cafe/img/google.png" width="45px" height="45px">
+                    <img src = "cafe/img/google.png" width="35px" height="35px">
                 </div>
             </a>
             <a id = "accessBtn" href = "home.php">
                 <div id = "btn">
-                    <img src = "cafe/img/apple.png" width="45px" height="45px">
+                    <img src = "cafe/img/apple.png" width="35px" height="35px">
                 </div>
             </a>
         </div>
     </div>
-    
-    
-    </header>
+ 
+    <div id = "jumpTopBtn">
+        <a href="#">Jump To Top</a>
+    </div>
 </body>
 </html>

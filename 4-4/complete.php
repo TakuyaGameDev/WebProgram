@@ -1,3 +1,14 @@
+
+<?php
+    //直リンク禁止
+    if (empty($_SERVER["HTTP_REFERER"]))
+    {
+        //リダイレクト
+        header('Location: contact.php');
+    }
+?>
+
+<?php include 'header.php'?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -6,6 +17,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
     <body>
+        
         <div id = "compBox">
             <div id = "strBox">
                 <h1>お問い合わせ</h1>

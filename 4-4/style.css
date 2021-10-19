@@ -36,10 +36,10 @@ textarea
 {
     min-height:780px;
     width:100%;
+    background-image:url("cafe/img/eyecatch.jpg");
     background-position:center;
     background-size:cover;
 }
-
 .Header #filter
 {
     height:780px;
@@ -48,18 +48,28 @@ textarea
     position:absolute;
     opacity:0.25;
 }
-
-.Header #head
+.fixed
 {
-    height:50px;
-    background-color:black;
+    position: fixed;
+    top: 0;
+    width:auto;
+    background-color: black;
+    color: white;
+    transition: color 0.4s ease;
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 0.9;
+}
+#head
+{
+    width:100%;
+    height:70px;
     display:flex;
-    position:fixed;
 }
 
 nav
 {
-    position:fixed;
+    position:relative;
     width:530px;
     height:50px;
     display:flex;
@@ -86,20 +96,18 @@ nav a
     padding-left:80px;
     text-decoration: none;
 }
-#signin
+#signin #button
 {
     position:fixed;
     width:120px;
     right:60px;
     margin-top:20px;
 }
-#signin a
+#signin #button p
 {
     font-size:22px;
-    line-height:2.34;
     color:#ffffff;
-
-    text-decoration: none;
+    line-height:0.5;
 }
 
 .Header h1
@@ -143,8 +151,8 @@ nav a
 
 .locationPhotos #box #photo img
 {
-    width:100px;
-    height:100px;
+    width:80px;
+    height:80px;
     object-fit: cover;
     border-radius:8px;
     margin-right:15px;
@@ -164,17 +172,21 @@ nav a
 {
     display:flex;
     margin-left:8.6%;
-    margin-bottom:100px;
+    margin-bottom:20px;
+    margin-right:8.6%;
 }
 
 #favLocPhotos #area
 {
+    width:100%;
+    height:auto;
+
     margin-right:10px;
 }
 
 #favLocPhotos #area img
 {
-    width:100%;
+    width: 100%;
     height:80%;
     border-radius:8px;
 }
@@ -186,9 +198,10 @@ nav a
 
 .GoToEats
 {
-    width:90%;
+    width: 82.3%;
     height:426px;
     margin-left:8.6%;
+    margin-right:8.6%;
     background-image: url("cafe/img/goto.jpg");
     border-radius:20px;
     padding-top:80px;
@@ -222,13 +235,11 @@ nav a
 
 #Experience
 {
-    width:100%;
-    height:100%;
+    width:auto;
+    height:auto;
 
     background-color:#000000;
-
     padding-top:30px;
-    padding-bottom:50px;
 }
 
 #Experience #title
@@ -239,7 +250,6 @@ nav a
 }
 #Experience strong
 {
-    display:block;
     margin-top:-30px;
     margin-left:8.6%;
     font-size:18px;
@@ -249,37 +259,35 @@ nav a
 {
     margin-top:20px;
     margin-left:8.6%;
+    margin-right:8.6%;
     display:flex;
 }
 
 #Experience #photoArea img
 {
     width:100%;
-    margin-right:2%;
     border-radius:8px;
 }
 
 #Experience #photoArea #area
 {
-    width:30%;
-    height:30%;
-
     margin-right:30px;
 }
 #Experience #photoArea h1
 {
     color:#ffffff;
-    margin-top:-5px;
+    margin-top:0px;
 }
 #Experience #photoArea p
 {
     color:#ffffff;
-    margin-top:-20px;
+    margin-top:-10px;
 }
 
 .joinHost
 {
     margin-left:8.6%;
+    margin-right:8.6%;
 }
 .joinHost #title
 {
@@ -294,16 +302,17 @@ nav a
 
 .joinHost #photoArea #area
 {
-    width:30%;
-    height:30%;
+    width:100%;
+    height:100%;
 
-    margin-right:30px;
+    margin-right:20px;
+
 }
 
 .joinHost #photoArea img
 {
     width:100%;
-    margin-right:2%;
+    margin-right:0px;
     border-radius:8px;
 }
 
@@ -320,6 +329,7 @@ nav a
     border-top:solid #c0c0c0 2px;
 
     padding-top:100px;
+    padding-bottom:5px;
 }
 
 .footerBox #parent
@@ -353,7 +363,7 @@ nav a
 
 .footerBox #parent #area
 {
-    width:250px;
+    width:350px;
     margin-right:8%;
 }
 
@@ -362,6 +372,7 @@ nav a
     margin-top:-10px;
     line-height:1.0;
     margin-left:8.6%;
+    margin-right:8.6%;
     margin-bottom:100px;
 }
 
@@ -372,7 +383,7 @@ nav a
 
 #contactBox
 {
-    width:80%;
+    width:60%;
     height:auto;
     border:solid 2px #d0d0d0;
     border-radius:20px;
@@ -381,7 +392,7 @@ nav a
     margin-bottom:80px;
 }
 
-#contactBox #contactHeader h1
+#contactBox #contactHeader h2
 {
     text-align:center;
 
@@ -459,24 +470,53 @@ nav a
     border-radius:15px;
 }
 
+#signin
+{
+    position:fixed;
+    width:120px;
+    right:60px;
+    margin-top:20px;
+}
+
+#signin a
+{
+    font-size:22px;
+    line-height:2.34;
+    color:#ffffff;
+
+    text-decoration: none;
+}
 #modal {
+    font-size: 30px;
+    font-weight: bold;
+    animation-name: fadeup;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 700px;
+    width: 1000px;
     height: 750px;
     background-color: #ffffff;
     display:none;
-    border-radius:40px;
+    border-radius:20px;
     padding-top:20px;
 }
+@keyframes fadeup {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%);
+        transform: translateX(50%);
+    }
+}
+
 #modal #strBox
 {
     width:auto;
     height:auto;
-    padding:0 300px;
-    padding-bottom:20px;
+    text-align: center;
+    padding-bottom:10px;
     border-bottom:solid #d0d0d0 2px;
 }
 #modal #strBox strong
@@ -485,52 +525,83 @@ nav a
 }
 #modal #inputBox
 {
-    padding:0 50px;
-    padding-top:30px;
+    width:100%;
+    height:auto;
     padding-bottom:30px;
     border-bottom:solid #d0d0d0 2px;
 }
 #modal #inputBox #passInput input
 {
-    width:600px;
-    height:50px;
+    width:940px;
+    height:60px;
+    margin-left:30px;
+    margin-right:30px;
     border-radius:10px;
     margin-top:10px;
 }
 #modal #inputBox #emailInput input
 {
-    width:600px;
-    height:50px;
-
+    width:940px;
+    height:60px;
+    margin-left:30px;
+    margin-right:30px;
+    margin-top:40px;
     border-radius:10px;
 }
 #modal #inputBox #sendBtn input
 {
-    width:600px;
-    height:70px;
-
+    width:940px;
+    height:60px;
+    margin-left:30px;
+    margin-right:30px;
     border-radius:10px;
     background-color:#ff00a0;
 
-    margin-top:30px;
+    margin-top:10px;
 }
 #modal #snsBtn
 {
     border-radius:10px;
-    margin-top:10px;
-    padding:0 50px;
+    margin-top:30px;
+
 }
 #modal #snsBtn #btn
 {
-    width:600px;
-    height:70px;
+    width:940px;
+    height:60px;
+    margin-left:30px;
+    margin-right:30px;
     border:solid #d0d0d0 2px;
     border-radius:10px;
     margin-top:10px;
     text-align: center;
-    padding-top:12.5px;
-    margin-top:20px;
+    padding-top:10px;
+    margin-top:15px;
     margin-bottom:30px;
+}
+
+#jumpTopBtn
+{
+    width:180px;
+    height:70px;
+    background-color:#000000;
+
+    text-align: center;
+    padding-top:15px;
+    padding-bottom:15px;
+    position:fixed;
+    right:0;
+    bottom:0;
+    display:none;
+}
+#jumpTopBtn a
+{
+    width:auto;
+    height:auto;
+    color:#ffffff;
+    font-size: 24px;
+    text-decoration:none;
+
 }
 
 #overlay {
@@ -555,58 +626,97 @@ nav a
 
     border-radius:10px;
     margin-bottom:50px;
+    cursor:pointer;
 }
 
 #confirmHeader
 {
-    width:80%;
+    width:62%;
     height:auto;
     border:solid 2px #d0d0d0;
     border-radius:20px;
     margin:0 auto;
     margin-top:200px;
     margin-bottom:80px;
+    padding-top:10px;
+    padding-bottom:60px;
 }
-
-#confirmHeader h1
+#confirmHeader #strBox
+{
+    padding-bottom:10px;
+    border-bottom:solid #d0d0d0 2px;
+}
+#confirmHeader h2
 {
     text-align: center;
 }
-
+#confirmHeader #confirm p
+{
+    margin-left:3%;
+    font-size:18px;
+}
 #confirmHeader #box
 {
-    width:80%;
+    width:auto;
     height:auto;
-    border:solid 2px #d0d0d0;
-    border-radius:20px;
-    margin:0 auto;
-    margin-top:20px;
-    margin-bottom:10px;
-    padding-top:10px;
-    padding-left:10px;
+    margin-left:3%;
+    margin-right:3%;
+    border-bottom:solid #d0d0d0 2px;
 }
-
 #confirmHeader #box #first
 {
-    font-size:30px;
+    font-size:24px;
 }
-#confirmHeader #box p
+#confirmHeader #itemStrBox
 {
-    font-size:30px;
-    margin-left:50px;
+    width:auto;
+    height:auto;
+    font-size:27px;
+    margin-left:5%;
+    margin-right:5%;
+}
+#confirmHeader #itemStrBox #itemStr
+{
+    font-size:27px;
+    margin-left:5%;
+}
+#confirmHeader #btn
+{
+    display:flex;
+
+}
+#confirmHeader #btn1
+{
+    width:45%;
+    height:80px;
+    margin-left:3%;
+}
+#confirmHeader #btn2
+{
+    width:45%;
+    height:80px;
+    margin-left:auto;
+    margin-right:3%;
 }
 
 #confirmHeader #submitBtn
 {
-    width:40%;
-    height:auto;
+    width:100%;
+    height:100%;
 
     background-color:#ff00a0;
+    cursor:pointer;
+
+    border-radius:15px;
 }
 #confirmHeader #backBtn
 {
-    width:40%;
-    height:auto;
+    width:100%;
+    height:100%;
+    border-radius:15px;
+    border-width:3px;
+    background-color:#ffffff;
+    cursor:pointer;
 }
 
 #confirmHeader #btns

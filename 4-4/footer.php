@@ -34,10 +34,10 @@
                 <p><a href = "">信頼＆安全</a></p>
             </div>
         </div>
-    </section>
-    <section class = "siteInfo">
-        <p>このサイトの素材は全て著作権フリーのもの使用しています。</p>
-        <p>プライバシーポリシー 利用規約 サイトマップ 企業情報</p>
-        <p>&copy 2021- LiNew, Inc. All rights reserved.</p>
+        <section class = "siteInfo">
+            <p>このサイトの素材は全て著作権フリーのもの使用しています。</p>
+            <p>プライバシーポリシー 利用規約 サイトマップ 企業情報</p>
+            <p>&copy 2021- LiNew, Inc. All rights reserved.</p>
+        </section>
     </section>
 </body>

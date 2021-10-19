@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -6,24 +7,36 @@ session_start();
     if ($_SERVER['REQUEST_METHOD'] != 'POST')
     {
         // POSTでのアクセスでない場合
-        $name = '';
-        $furi = '';
-        $telNum = '';
-        $add = '';
-        $opinion = '';
+        if(!empty($_SESSION['form']))
+        {
+            $post = $_SESSION['form'];
+            $name1 = $post['name'];
+            $furi1 = $post['furigana'];
+            $telNum1 = $post['telNum'];
+            $add1 = $post['mailAddress'];
+            $opinion1 = $post['opinion'];
+        }
+        else
+        {
+            $name1 = '';
+            $furi1 = '';
+            $telNum1 = '';
+            $add1 = '';
+            $opinion1 = '';
+        }
     }
     else
     {
-
-        $post = filter_input_array(INPUT_POST,$_POST);
         // フォームがサブミットされた場合（POST処理）
         // 入力された値を取得する
+
+        $post = filter_input_array(INPUT_POST,$_POST);
+
         $name1 = $post['name'];
         $furi1 = $post['furigana'];
         $telNum1 = $post['telNum'];
         $add1 = $post['mailAddress'];
         $opinion1 = $post['opinion'];
-
         
         // チェック
         if(($name1 === "") || (mb_strlen($name1) >= 10))
@@ -34,10 +47,14 @@ session_start();
         {
             $err_msg[1] = "フリガナは必須入力です。10文字以内でご入力ください。";
         }
-        if(!preg_match('/^[0-9]+$/', $telNum1))
+        if(!empty($telNum1))
         {
-            $err_msg[2] = "電話番号は0-9の数字のみでご入力ください。";
+            if(!preg_match('/^[0-9]+$/', $telNum1))
+            {
+                $err_msg[2] = "電話番号は0-9の数字のみでご入力ください。";
+            }
         }
+
         if((empty($add1)) || (!filter_var($add1, FILTER_VALIDATE_EMAIL)))
         {
             $err_msg[3] = "メールアドレスは正しくご入力ください。";
@@ -48,11 +65,14 @@ session_start();
         }
 
         $firstCompFlg = true;
-        foreach($err_msg as $str)
+        for($s = 0;$s < count($err_msg);$s++)
         {
-            if($str !== "")
+            if($s !== 2)
             {
-                $firstCompFlg = false;
+                if($err_msg[$s] !== "")
+                {
+                    $firstCompFlg = false;
+                }
             }
         }
         if($firstCompFlg)
@@ -64,20 +84,21 @@ session_start();
     }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
 <title>Contact</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="process.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
     <body>
+        <header class = "contact"><?php include 'header.php';?></header>
     <form id = "form" action="" method="POST">
         <div id = "contactBox">
             <div id = "contactHeader">
-                <h1>お問い合わせ</h1>
+                <h2>お問い合わせ</h2>
             </div>
             <div id = "contactBody">
                 <div id = "strBox">

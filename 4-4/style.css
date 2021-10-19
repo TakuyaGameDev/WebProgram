@@ -486,29 +486,32 @@ nav a
 
     text-decoration: none;
 }
+
+
+
 #modal {
     font-size: 30px;
     font-weight: bold;
-    animation-name: fadeup;
-    animation-duration: 2s;
-    animation-iteration-count: 1;
     position: fixed;
+    top:50%;
+    left:50%;
+	transform: translate(-50%,0%);
     width: 1000px;
     height: 750px;
     background-color: #ffffff;
-    display:none;
     border-radius:20px;
     padding-top:20px;
+    opacity:0;
 }
-@keyframes fadeup {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-        transform: translateY(-50%);
-        transform: translateX(50%);
-    }
+#modal.slideUp
+{
+    transform:translate(-50%,-50%);
+    transition:transform 1.5s;
+}
+#modal.slideDown
+{
+    transform:translate(-50%,50%);
+    transition:transform 1.5s;
 }
 
 #modal #strBox

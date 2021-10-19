@@ -20,7 +20,6 @@ $(function(){
       else
       {
         $('#jumpTopBtn').fadeIn();
-        
         $('#head').addClass('fixed');
       }
     }
@@ -34,14 +33,21 @@ $(function(){
       $("html, body").animate({scrollTop:position}, speed, "swing");
       return false;
     });
-
     $('#signin').on('click',function(){
-      $('#modal').fadeIn();
+      $('#modal').animate(
+          {opacity:1},300
+        );
+      $('#modal').removeClass('slideDown');
+      $('#modal').addClass('slideUp');
       $('#overlay').fadeIn();
         return false;
       });
       $('#overlay').on('click', function () {
-        $('#modal').fadeOut();
+        $("#modal").animate(
+          {opacity:0},300
+        );
+        $('#modal').removeClass('slideUp');
+        $('#modal').addClass('slideDown');
         $('#overlay').fadeOut();
         return false;
       });

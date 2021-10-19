@@ -10,7 +10,7 @@
 <body>
     <div id = "head">
         <div id = "logo">
-            <a href=""><img src = "cafe/img/logo.png"width="247px" height="46.8px"></a>
+            <a href="home.php"><img src = "cafe/img/logo.png"width="247px" height="46.8px"></a>
         </div>
         <nav>
             <div id = "button1">

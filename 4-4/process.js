@@ -1,11 +1,27 @@
-
+ 
 $(function(){
+ // データベースのデータの編集画面に移行処理-----------
+ var rowIndex = 0;
+ $('tr').on('click',function () 
+ {
+     rowIndex = this.rowIndex;
+     alert(rowIndex);
+ });
+ $('#editBtn').on('click',function () 
+ {
+     var str = rowIndex;
+     location.href = "dataEdit.php";
+ });
+ // --------------------------------------------------
   var url = window.location;
   var path = url.href.split('/');
   var file_name = path.pop();
   if(file_name != "home.php")
   {
     $('#head').addClass('fixed');
+    $('#menuItem').addClass('fixed');
+    $('#logo').addClass('fixed');
+    $('#signin').addClass('fixed');
   }
   $(window).scroll(function(){
 
@@ -15,12 +31,23 @@ $(function(){
       if(scrollAmount <= 0)
       {
         $('#jumpTopBtn').fadeOut();
-        $('#head').removeClass('fixed');
+        
+        $('#blackBoard').removeClass('active');
+        $('#blackBoard').addClass('nonActive');
+        $('#menuItem').removeClass('active');
+        $('#menuItem').addClass('nonActive');
+        $('#logo').removeClass('active');
+        $('#logo').addClass('nonActive');
       }
       else
       {
         $('#jumpTopBtn').fadeIn();
-        $('#head').addClass('fixed');
+        $('#blackBoard').removeClass('nonActive');
+        $('#blackBoard').addClass('active');
+        $('#menuItem').removeClass('nonActive');
+        $('#menuItem').addClass('active');
+        $('#logo').removeClass('nonActive');
+        $('#logo').addClass('active');
       }
     }
   });

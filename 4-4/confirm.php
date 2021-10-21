@@ -19,7 +19,7 @@ if(!empty($_POST['back']))
 if(!empty($_POST['send']))
 {
     if($_POST['send']){
-        unset($_SESSION['form']);
+        $_SESSION['form'] = $post;
         header("Location:complete.php");
     }
 }

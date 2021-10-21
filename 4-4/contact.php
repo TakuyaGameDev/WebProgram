@@ -1,7 +1,61 @@
+<?php include 'header.php';?>
 
 <?php
+require_once 'DBManager.php';
 session_start();
+    try 
+    {
+        //DBへの接続を確立
+        $db = getDB();
+        // データベース空抽出してきたデータ達
+        $dataArr = [];
+        // テーブルのヘッダーに出力するデータベースに登録した各コメント達
+        $thNames = [];
+        $sql = "SELECT * FROM contacts";
 
+        // SQLステートメントを実行し、結果を変数に格納
+        $stmt = $db->query($sql);
+        $cnt = 0;
+        // foreach文で配列の中身を一行ずつ出力
+        foreach ($stmt as $row) {
+            $dataArr[$cnt]['id'] = $row['id'];
+            $dataArr[$cnt]['name'] = $row['name'];
+            $dataArr[$cnt]['kana'] = $row['kana'];
+            $dataArr[$cnt]['tel'] = $row['tel'];
+            $dataArr[$cnt]['email'] = $row['email'];
+            $dataArr[$cnt]['body'] = $row['body'];
+            $dataArr[$cnt]['time'] = $row['created_at'];
+            $cnt++;
+        }
+
+        // データベースに格納したテーブルの各データ達のコメント抽出
+        $table_name = "contacts";
+        $cnt = 0;
+        $column = "show full columns from ".$table_name;
+        $column_data = $db->query($column);
+        foreach($column_data as $value)
+        {        
+            if($cnt < 6)
+            {
+                // 各コメントの格納
+                $thNames[] = $value[8];
+            }
+            $cnt++;
+        }
+        if (isset($_POST['editBtn'])) 
+        {
+            
+            // header("Location:dataEdit.php");
+        }
+    }
+    catch (PDOException $e) 
+    {
+        print "エラーメッセージ：{$e->getMessage()}";
+    } 
+    finally 
+    {
+        $db = null;
+    }
     // エラーメッセージ・完了メッセージの用意
     $err_msg = array("","","","","");
     if ($_SERVER['REQUEST_METHOD'] != 'POST')
@@ -67,7 +121,17 @@ session_start();
         $firstCompFlg = true;
         for($s = 0;$s < count($err_msg);$s++)
         {
-            if($s !== 2)
+            if(empty($telNum1))
+            {
+                if($s !== 2)
+                {
+                    if($err_msg[$s] !== "")
+                    {
+                        $firstCompFlg = false;
+                    }
+                }
+            }
+            else
             {
                 if($err_msg[$s] !== "")
                 {
@@ -94,7 +158,6 @@ session_start();
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
     <body>
-        <header class = "contact"><?php include 'header.php';?></header>
     <form id = "form" action="" method="POST">
         <div id = "contactBox">
             <div id = "contactHeader">
@@ -171,12 +234,37 @@ session_start();
                     </p>
                     <textarea id = "opinionBox" name = "opinion"><?php if(!empty($opinion1)){echo htmlspecialchars($opinion1);}; ?></textarea>
                 </div>
-                <div id = "submitBtn">
                     <input id = submitBtn type = "submit" name = "submitBtn" value="送　信" style="color:#ffffff"></input>
-                </div>
             </div>
         </div>
+ 
         </form>
+        <div id = "databaseTbl">
+            <table border="1" align="center" width="80%" height="100%">
+                　<tr>
+                    <?php foreach($thNames as $c)
+                    {
+                        echo '<th>'.$c.'</th>';
+                    }
+                    echo '<th>送信日時</th>';
+                    $cnt = 0;
+                    ?>
+                　</tr>
+                    <?php foreach($dataArr as $val):?>
+                        <tr>
+                            <td><?php echo $val['id']?></td>
+                            <td><?php echo $val['name']?></td>
+                            <td><?php echo $val['kana']?></td>
+                            <td><?php echo $val['tel']?></td>
+                            <td><?php echo $val['email']?></td>
+                            <td><?php echo $val['body']?></td>
+                            <td><?php echo $val['time']?></td>
+                            <td><a href="dataEdit.php" id=<?php echo $val["id"] ?>>編集</a></td>
+                            <td><a href="" id=<?php echo $val["id"] ?>>削除</a></td>
+                        </tr>
+                    <?php endforeach;?>
+            </table>
+        </div>
     </body>
 </html>
 

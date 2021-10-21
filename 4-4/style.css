@@ -31,7 +31,6 @@ textarea
     font-size:20px;
     color:#ffffff;
 }
-
 .Header
 {
     min-height:780px;
@@ -40,17 +39,18 @@ textarea
     background-position:center;
     background-size:cover;
 }
-.Header #filter
+.Header #blackBoard
 {
-    height:780px;
+    position:relative;
     width:100%;
-    background-color:#ffffff;
-    position:absolute;
-    opacity:0.25;
+    height:70px;
+
+    background-color:#000000;
+    
+    opacity:0;
 }
 .fixed
 {
-    position: fixed;
     top: 0;
     width:auto;
     background-color: black;
@@ -60,6 +60,21 @@ textarea
     flex-wrap: wrap;
     opacity: 0.9;
 }
+.Header #blackBoard.active
+{
+    margin-top:-50px;
+    position:fixed;
+    opacity:0.7;
+}
+.Header #filter
+{
+    height:780px;
+    width:100%;
+    background-color:#ffffff;
+    position:absolute;
+    opacity:0.25;
+}
+
 #head
 {
     width:100%;
@@ -67,28 +82,54 @@ textarea
     display:flex;
 }
 
-nav
+#menuItem
 {
-    position:relative;
-    width:530px;
+    position:fixed;
+    width:auto;
     height:50px;
     display:flex;
     right:0;
     left:0;
-    margin:0 auto;
+    justify-content: center;
     padding-top:10px;
+}
+#menuItem.fixed
+{
+    position:absolute;
 }
 #logo
 {
+    width:auto;
+    width:auto;
     position:fixed;
     margin-left:3%;
     margin-top:10px;
+    transition: all 0.3s ease;
+
 }
-nav #button1 #button2 #button3
+#logo.active
 {
-    margin-left:0px;
+    margin-top:-40px;
 }
-nav a
+#logo.fixed
+{
+    position:absolute;
+}
+
+#menuItem
+{
+    transition: all 0.3s ease;
+    margin-right:65px;
+}
+#menuItem.active
+{
+    margin-top:-50px;
+}
+#menuItem #button1 #button2 #button3
+{
+    margin:0 auto;
+}
+#menuItem #button1 a
 {
     font-size:20px;
     line-height:2.34;
@@ -96,18 +137,38 @@ nav a
     padding-left:80px;
     text-decoration: none;
 }
-#signin #button
+#menuItem #button2 a
 {
-    position:fixed;
-    width:120px;
-    right:60px;
-    margin-top:20px;
+    font-size:20px;
+    line-height:2.34;
+    color:#ffffff;
+    padding-left:80px;
+    text-decoration: none;
 }
-#signin #button p
+#menuItem #button3 a
 {
-    font-size:22px;
+    font-size:20px;
+    line-height:2.34;
+    color:#ffffff;
+    padding-left:80px;
+    text-decoration: none;
+}
+#menuItem #signin
+{
+    width:auto;
+    height:auto;
+}
+#signin.fixed
+{
+    padding-top:10px;
+    position:absolute;
+}
+#menuItem #signin a
+{
+    font-size:20px;
     color:#ffffff;
     line-height:0.5;
+    text-align: center;
 }
 
 .Header h1
@@ -381,6 +442,11 @@ nav a
     font-size:18px;
 }
 
+#contact
+{
+    width:100%;
+}
+
 #contactBox
 {
     width:60%;
@@ -487,8 +553,6 @@ nav a
     text-decoration: none;
 }
 
-
-
 #modal {
     font-size: 30px;
     font-weight: bold;
@@ -502,16 +566,19 @@ nav a
     border-radius:20px;
     padding-top:20px;
     opacity:0;
+    z-index:-1;
 }
 #modal.slideUp
 {
     transform:translate(-50%,-50%);
     transition:transform 1.5s;
+    z-index: 1;
 }
 #modal.slideDown
 {
     transform:translate(-50%,50%);
     transition:transform 1.5s;
+    z-index: 1;
 }
 
 #modal #strBox
@@ -561,6 +628,7 @@ nav a
     background-color:#ff00a0;
 
     margin-top:10px;
+    cursor:pointer;
 }
 #modal #snsBtn
 {
@@ -581,6 +649,7 @@ nav a
     padding-top:10px;
     margin-top:15px;
     margin-bottom:30px;
+    cursor:pointer;
 }
 
 #jumpTopBtn
@@ -596,6 +665,7 @@ nav a
     right:0;
     bottom:0;
     display:none;
+    cursor:pointer;
 }
 #jumpTopBtn a
 {
@@ -618,7 +688,7 @@ nav a
     display:none;
 }
 
-#contactBox #contactBody #submitBtn input
+#contactBox #contactBody #submitBtn
 {
     width:100%;
     height:auto;
@@ -693,6 +763,7 @@ nav a
     width:45%;
     height:80px;
     margin-left:3%;
+
 }
 #confirmHeader #btn2
 {
@@ -767,4 +838,10 @@ nav a
 {
     font-size:20px;
     margin-left:2%;
+}
+
+#databaseTbl
+{
+    width:100%;
+    height:100%;
 }

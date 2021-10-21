@@ -9,10 +9,9 @@
 </head>
 <body>
     <div id = "head">
-        <div id = "logo">
-            <a href="home.php"><img src = "cafe/img/logo.png"width="247px" height="46.8px"></a>
-        </div>
-        <nav>
+        <div id = "blackBoard"></div>
+
+        <div id = "menuItem">
             <div id = "button1">
                 <a href="#favLocation">はじめに</a>
             </div>
@@ -22,10 +21,19 @@
             <div id = "button3">
                 <a href="contact.php">お問い合わせ</a>
             </div>
-        </nav>
-        <div id = "signin">
-            <a href="">サインイン</a>
+            <div id = "signin">
+                <a href="">サインイン</a>
+            </div>
         </div>
+        <div id="logo">
+            <a href="home.php">
+                <img src="cafe/img/logo.png">
+            </a>
+        </div>
+    </div>
+ 
+    <div id = "jumpTopBtn">
+        <a href="#">Jump To Top</a>
     </div>
     <div id="overlay"></div>
     <div id = "modal">
@@ -65,10 +73,6 @@
                 </div>
             </a>
         </div>
-    </div>
- 
-    <div id = "jumpTopBtn">
-        <a href="#">Jump To Top</a>
     </div>
 </body>
 </html>

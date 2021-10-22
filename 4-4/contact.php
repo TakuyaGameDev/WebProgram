@@ -3,21 +3,36 @@
 <?php
 require_once 'DBManager.php';
 session_start();
+    $id = 0;
     try 
     {
         //DBへの接続を確立
         $db = getDB();
+        try 
+        {
+            $db->beginTransaction();
+            $sql = "SELECT * FROM contacts";
+            $stmt = $db->query($sql);
+            // SQLステートメントを実行し、結果を変数に格納
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $sql = "show full columns from contacts";
+            $column_data = $db->query($sql);
+            $db->commit();
+            $db = null;
+        } 
+        catch(PDOException $e)
+        {
+            echo "faillure:". $e->$getMessage();
+            $db->rollBack();
+        ;}
         // データベース空抽出してきたデータ達
         $dataArr = [];
         // テーブルのヘッダーに出力するデータベースに登録した各コメント達
         $thNames = [];
-        $sql = "SELECT * FROM contacts";
 
-        // SQLステートメントを実行し、結果を変数に格納
-        $stmt = $db->query($sql);
         $cnt = 0;
         // foreach文で配列の中身を一行ずつ出力
-        foreach ($stmt as $row) {
+        foreach ($result as $row) {
             $dataArr[$cnt]['id'] = $row['id'];
             $dataArr[$cnt]['name'] = $row['name'];
             $dataArr[$cnt]['kana'] = $row['kana'];
@@ -29,10 +44,7 @@ session_start();
         }
 
         // データベースに格納したテーブルの各データ達のコメント抽出
-        $table_name = "contacts";
         $cnt = 0;
-        $column = "show full columns from ".$table_name;
-        $column_data = $db->query($column);
         foreach($column_data as $value)
         {        
             if($cnt < 6)
@@ -41,11 +53,6 @@ session_start();
                 $thNames[] = $value[8];
             }
             $cnt++;
-        }
-        if (isset($_POST['editBtn'])) 
-        {
-            
-            // header("Location:dataEdit.php");
         }
     }
     catch (PDOException $e) 
@@ -56,6 +63,7 @@ session_start();
     {
         $db = null;
     }
+
     // エラーメッセージ・完了メッセージの用意
     $err_msg = array("","","","","");
     if ($_SERVER['REQUEST_METHOD'] != 'POST')
@@ -108,7 +116,7 @@ session_start();
                 $err_msg[2] = "電話番号は0-9の数字のみでご入力ください。";
             }
         }
-
+        
         if((empty($add1)) || (!filter_var($add1, FILTER_VALIDATE_EMAIL)))
         {
             $err_msg[3] = "メールアドレスは正しくご入力ください。";
@@ -117,7 +125,13 @@ session_start();
         {
             $err_msg[4] = "お問い合わせ内容をご記入ください。";
         }
-
+        // 消去okボタンを押した時
+        if (isset($_POST['ok'])) 
+        {
+            $id = $_GET['id'];
+            echo $id;
+            // header("Location:delete.php");
+        }
         $firstCompFlg = true;
         for($s = 0;$s < count($err_msg);$s++)
         {
@@ -159,6 +173,7 @@ session_start();
 </head>
     <body>
     <form id = "form" action="" method="POST">
+        
         <div id = "contactBox">
             <div id = "contactHeader">
                 <h2>お問い合わせ</h2>
@@ -237,35 +252,56 @@ session_start();
                     <input id = submitBtn type = "submit" name = "submitBtn" value="送　信" style="color:#ffffff"></input>
             </div>
         </div>
- 
+            <div id = "databaseTbl">
+                <table border="1" align="center" width="80%" height="100%">
+                    　<tr>
+                        <?php foreach($thNames as $c)
+                        {
+                            echo '<th>'.$c.'</th>';
+                        }
+                        echo '<th>送信日時</th>';
+                        $cnt = 0;
+                        ?>
+                    　</tr>
+                        <?php foreach($dataArr as $val):?>
+                            <tr class = "tblRow">
+                                <td><?php echo $val['id']?></td>
+                                <td><?php echo $val['name']?></td>
+                                <td><?php echo $val['kana']?></td>
+                                <td><?php echo $val['tel']?></td>
+                                <td><?php echo $val['email']?></td>
+                                <td><?php echo $val['body']?></td>
+                                <td><?php echo $val['time']?></td>
+                                <?php $id = $val['id'];?>
+                                <td><a href="dataEdit.php?id=<?php echo $val['id'];?>">編集</a></td>
+                                <td><a class = "deleteBtn" href="">削除</a></td>
+                            </tr>
+                        <?php endforeach;?>
+                </table>
+            </div>
+
         </form>
-        <div id = "databaseTbl">
-            <table border="1" align="center" width="80%" height="100%">
-                　<tr>
-                    <?php foreach($thNames as $c)
-                    {
-                        echo '<th>'.$c.'</th>';
-                    }
-                    echo '<th>送信日時</th>';
-                    $cnt = 0;
-                    ?>
-                　</tr>
-                    <?php foreach($dataArr as $val):?>
-                        <tr>
-                            <td><?php echo $val['id']?></td>
-                            <td><?php echo $val['name']?></td>
-                            <td><?php echo $val['kana']?></td>
-                            <td><?php echo $val['tel']?></td>
-                            <td><?php echo $val['email']?></td>
-                            <td><?php echo $val['body']?></td>
-                            <td><?php echo $val['time']?></td>
-                            <td><a href="dataEdit.php" id=<?php echo $val["id"] ?>>編集</a></td>
-                            <td><a href="" id=<?php echo $val["id"] ?>>削除</a></td>
-                        </tr>
-                    <?php endforeach;?>
-            </table>
-        </div>
     </body>
 </html>
+
+<script>
+const deleteAll = document.querySelectorAll(".deleteBtn");
+
+const deleteConfirmation = function (e) {
+    e.preventDefault();
+    const id = e.target.closest(".tblRow").firstElementChild.innerHTML;
+    if (confirm("id:"+id+"Delete OK?")) {
+        //削除処理
+        window.location.href = `delete.php?id=${id}`;
+    } else {
+        return;
+    };
+};
+
+for (const deleteBtn of deleteAll) {
+    deleteBtn.addEventListener("click", deleteConfirmation)
+};
+
+</script>
 
 <?php include 'footer.php'; ?>

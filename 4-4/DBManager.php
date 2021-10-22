@@ -1,11 +1,14 @@
 <?php
 function getDB() {
-    $dsn = 'mysql:dbname=cafe; host=127.0.0.1; charset=utf8';
-    $usr = 'root';
-    $passwd = 'Dream1022';
-  
-    //DBへの接続を確立
-    $db = new PDO($dsn, $usr, $passwd);
-    return $db;
+  try { 
+    $dbh = new PDO('mysql:dbname=cafe;host=localhost;charset=utf8','root','Dream1022', [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_EMULATE_PREPARES => false,
+    ]);
+    } catch(PDOException $e){
+        echo 'DB接続エラー' . $e->getMessage();
+        exit();
+    };
+    return $dbh;
   }
 ?>

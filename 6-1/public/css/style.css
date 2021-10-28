@@ -1,0 +1,29 @@
+
+#box
+{
+    width:60%;
+    height:30px;
+    padding-bottom:10px;
+    border-bottom:solid #e0e0e0 3px;
+
+    margin-bottom:20px;
+}
+
+#rtnBtn
+{
+    width:60%;
+    height:30px;
+    text-align: center;
+    padding-top:30px;
+}
+
+#dtTbl
+{
+    padding-bottom:30px;
+    border-bottom:solid #e0e0e0;
+}
+
+#paging a
+{
+    padding-right:8px;
+}
